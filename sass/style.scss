@@ -1,0 +1,621 @@
+$color-button: #1373E5;
+$color-good: #10B97B;
+$color-bad: #E3405E;
+$color-grey: #87919C;
+$color-dot: #CED7E0;
+$color-text: #42464B;
+
+
+body {
+    background-color: #f5f7fa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 770px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 27px auto;
+}
+
+.comment {
+    position: relative;
+    margin-bottom: 10px;
+    max-width: 770px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 6px 29px rgba(15, 16, 17, 0.05);
+    padding: 27px 20px 33px 30px;
+
+    // Шапка формы
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        &-top-string-block {
+            display: flex;
+            flex-direction: column;
+        }
+        &-first-string {
+            display: flex;
+        }
+        &-second-string {
+            padding-top: 4px;
+            display: flex;
+        }
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__logo {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        background-color: #CED7E0;
+        border-radius: 50%;
+        margin-right: 18px;
+        background-size: 48px 48px;
+        &-svg {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 18px;
+            background-image: url('../icons/person.svg');
+            background-size: 18px 18px;
+        }
+        &-photo-vera {
+            width: 48px;
+            height: 48px;
+            background-image: url('../icons/vera.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+        &-photo-samanta {
+            width: 48px;
+            height: 48px;
+            background-image: url('../icons/samanta.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+        &-photo-anna {
+            width: 48px;
+            height: 48px;
+            background-image: url('../icons/anna.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+        &-photo-anatoly {
+            width: 48px;
+            height: 48px;
+            background-image: url('../icons/anatoly.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 25px;
+    }
+    &__name {
+        margin-right: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #0F1011;
+    }
+    &__status {
+        padding: 4px 7px;
+        border: 1px solid $color-good;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 12px;
+        color: $color-good;
+        &_blocked {
+            padding: 4px 7px;
+            border: 1px solid $color-bad;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 12px;
+            color: $color-bad;
+        }
+    }
+    &__flag {
+        width: 16px;
+        height: 16px;
+        background-image: url('../icons/ukraine.png');
+        background-size: 16px 16px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    &__date {
+        color: $color-grey;
+    }
+    &__dot {
+        width: 3px;
+        height: 3px;
+        background-color: $color-dot;
+        border-radius: 50%;
+        margin: 8px 15px;
+        &-info {
+            &:after {
+                position: absolute;
+                right: 2%;
+                content: '\2807';
+                font-size: 18px;
+                color: $color-grey;
+                cursor: pointer;
+            }
+        }
+    }
+    &__count-messages {
+        color: $color-grey;
+    }
+    &__stars {
+        display: flex;
+        flex-direction: row;
+        &-svg {
+            margin-right: 6px;
+            width: 16px;
+            height: 16px;
+            background-image: url('../icons/stars.svg');
+            background-size: 16px 16px;
+            cursor: pointer;
+            &:nth-of-type(5) {
+                background-image: url('../icons/stars-last.svg');
+            }
+        }
+        &-text {
+            line-height: 16px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+
+    // Тело формы
+
+    &__body {
+        padding: 18px 0 ;
+        font-size: 15px;
+        line-height: 28px;
+        color: $color-text;
+        &-two {
+            padding-top: 5px;
+        }
+    }
+    &__text {
+        max-width: 675px;
+        padding: 0 30px 0 13px;
+    }
+    &__body-one {
+        display: flex;
+        flex-direction: row;
+    }
+    &__body-two {
+        display: flex;
+        flex-direction: row;
+    }
+    &__plus {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        &-text {
+            display: none;
+        }
+        &-circle {
+            width: 20px;
+            height: 20px;
+            border: 3px solid $color-good;
+            border-radius: 50%;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 60%;
+                top: 30%;
+                display: block;
+                height: 14px;
+                width: 2px;
+                border-radius: 10px;
+                background-color: $color-good;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 60%;
+                left: 30%;
+                border-radius: 10px;
+                display: block;
+                width: 14px;
+                height: 2px;
+                background-color: $color-good;
+            }
+        }
+    }
+    
+    &__minus {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        &-text {
+            display: none;
+        }
+        &-circle {
+            width: 20px;
+            height: 20px;
+            border: 3px solid $color-bad;
+            border-radius: 50%;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 60%;
+                left: 30%;
+                border-radius: 10px;
+                display: block;
+                width: 14px;
+                height: 2px;
+                background-color: $color-bad;
+            }
+        }
+    }
+
+    // Подвал формы
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+    }
+    &__finger {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+    &__button {
+        width: 129px;
+        height: 40px;
+        background: none;
+        border: 1.5px solid $color-button;
+        color:$color-button;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        cursor: pointer;
+    }
+    &__like {
+        display: flex;
+        align-items: center;
+        margin-right: 22px;
+    }
+    &__dislike {
+        display: flex;
+        align-items: center;
+        margin-right: 22px;
+    }
+    &__icon {
+        &-like {
+            margin-right: 11px;
+            width: 19px;
+            height: 19px;
+            background-image: url('../icons/like.svg');
+            background-size: 19px 19px;
+            cursor: pointer;
+            &:hover {
+                background-image: url('../icons/like-hover.svg');
+            }
+        }
+        &-dislike {
+            margin-right: 11px;
+            width: 19px;
+            height: 19px;
+            background-image: url('../icons/dislike.svg');
+            background-size: 19px 19px;
+            cursor: pointer;
+            &:hover {
+                background-image: url('../icons/dislike-hover.svg');
+            }
+        }
+    }
+    &__count {
+        color: $color-grey;
+    }
+}
+
+.even {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    display: flex;
+    margin: 30px auto 0;
+    width: 181px;
+    height: 48px;
+    border: 1px solid $color-button;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-button;
+    cursor: pointer;
+    &__button {
+        padding-left: 20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        border: none;
+        background: none;
+        color: $color-button;
+        z-index: -1;
+    }
+    &__circle {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 15%;
+        left: 72%;
+        background: rgba(19, 115, 229, 0.1);
+        border-radius: 50%;
+    }
+    &__count {
+        margin: auto 0;
+    }
+}
+
+.rating{
+    box-sizing: border-box;
+    box-shadow: 0px 6px 29px rgba(15, 16, 17, 0.05);
+    padding: 30px;
+    text-align: center;
+    width: 370px;
+    max-height: 450px;
+    float: right;
+    margin: 60px 50px 0 0;
+    background-color: white;
+    border-radius: 5px;
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+    }
+    &__stars{
+        display: flex;
+        justify-content: center;
+        transform: scale(1.5);
+    }
+    &__count {
+            font-size: 20px;
+            line-height: 84px;
+            font-weight: 500;
+            margin-top: 11px;
+        span {
+
+            font-size: 50px;
+            line-height: 52px;
+            font-weight: 500;
+        }
+        &-messages {
+            margin: 20px 0 30px 0;
+            font-size: 13px;
+            line-height: 22px;
+            color: $color-grey;
+        }
+    }
+    &__item {
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        &-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-line {
+            width: 246px;
+            height: 6px;
+            border-radius: 10px;
+            background-color: #EAF1F9;
+            &-good {
+                width: 219px;
+                height: 6px;
+                border-radius: 10px;
+                background-color: $color-good;
+            }
+            &-middle {
+                width: 138px;
+                height: 6px;
+                border-radius: 10px;
+                background-color: #FABD48;
+            }
+            &-bad {
+                width: 51px;
+                height: 6px;
+                border-radius: 10px;
+                background-color: $color-bad;
+            }
+        }
+    }
+}
+
+@media (max-width: 1201px) {
+    .rating {
+        width: 770px;
+        height: 270px;
+        float: inherit;
+        margin: 30px auto 40px;
+        &__title {
+            text-align: left;
+        }
+        &__right {
+            margin-top: 20px;
+            float: right;
+            margin-right: 74px;
+        }
+        &__count {
+            margin-top: 0;
+        }
+        &__item {
+            &-row {
+                margin-top: 5px;
+                justify-content: left;
+            }
+            &-title {
+                margin-top: 10px;
+            }
+            &-line {
+                margin-right: 11px;
+            }
+        }
+    }
+}
+
+@media (max-width: 769px){
+    .container {
+        width: 690px;
+    }
+    
+    .comment {
+        &__stars {
+            position: absolute;
+            left: 88%;
+            top: 8.5%;
+        }
+        &__minus-circle {
+            border: 3px solid $color-grey;
+            &:before {
+                background-color: $color-grey;
+            }
+        }
+    }
+    .rating {
+        width: 690px;
+    }
+}
+
+@media (max-width: 541px) {
+    body {
+        margin: 0 0 10px 0;
+    }
+    .rating {
+        padding: 0;
+        margin: 0 0 0 0;
+        width: 320px;
+        height: 420px;
+        &__title {
+            padding: 20px 0;
+        }
+        &__right {
+            float: none;
+            margin-right: 0;
+        }
+        &__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__count {
+            line-height: 55px;
+            &-messages {
+                margin: 15px 0 19px 0;
+            }
+        }
+        &__stars {
+            transform: scale(1);
+        }
+      }
+      .container {
+          width: 315px;
+      }
+      .comment {
+        &__body {
+         padding: 0;   
+        }
+        &__count-messages {
+            display: none;
+        }
+        &__logo {
+            margin-bottom: 92px;
+        }
+        &__header {
+            &-first-string {
+                display: block;
+                position: absolute;
+                top: 25px;
+                left: 100px;
+            }
+        }
+        &__name-shop {
+            position: absolute;
+            width: 197px;
+            top: 95px;
+            left: 100px;
+        }
+        &__stars {
+            left: 32px;
+            top: 100px;
+        }
+        &__button {
+            border: none;
+            margin-right: 58px;
+        }
+        &__plus {
+            margin-top: 15px;
+            display: -webkit-box;
+            &-text {
+                display: block;
+                margin-left: 15px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+        &__minus {
+            display: -webkit-box;
+            margin-top: 9px;
+            &-text {
+                display: block;
+                margin-left: 15px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+            }
+            &-circle {
+                border: 3px solid $color-bad;
+                &:before {
+                    background-color: $color-bad;
+                }
+            }
+        }
+        &__text {
+            padding: 10px 0px 0 0px;
+        }
+        &__body-one {
+            display: inline;
+        }
+        &__body-two {
+            display: inline;
+        }
+        &__dot-info {
+            &::after {
+                right: 5%;
+            }
+        }
+      }
+      
+}
